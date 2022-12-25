@@ -1,0 +1,3 @@
+class NotFoundSession(Exception):
+    pass
+

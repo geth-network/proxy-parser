@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "proxy-parser"
+version = "0.1.0"
+description = ""
+authors = ["Stanislav Kachnov"]
+readme = "README.md"
+packages = [{include = "proxy_parser"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+aiohttp = "^3.8.3"
+aiodns = "^3.0.0"
+fake-http-header = "^0.1.2"
+beautifulsoup4 = "^4.11.1"
+lxml = "^4.9.2"
+pydantic = "^1.10.2"
+aioredis = {extras = ["hiredis"], version = "^2.0.1"}
+numpy = "^1.24.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
