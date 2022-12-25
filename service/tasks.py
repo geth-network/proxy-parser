@@ -21,7 +21,7 @@ async def parse_freeproxylist():
     parser = FreeProxyListParser()
     proxies_list = await parser.get_proxy_data(AsyncSession)
     await redis.lpush(settings.redis_proxy_key, *proxies_list)
-    print(f"push {len(proxies_list)} proxies to redis")
+    print(f"push {len(proxies_list)} proxies to redis")  # TODO replace to logging
 
 
 @task(interval=settings.parse_interval,
@@ -31,7 +31,7 @@ async def parse_freeproxycz():
     parser = FreeProxyCzParser()
     proxies_list = await parser.get_proxy_data(AsyncSession)
     await redis.lpush(settings.redis_proxy_key, *proxies_list)
-    print(f"push {len(proxies_list)} proxies to redis")
+    print(f"push {len(proxies_list)} proxies to redis")  # TODO replace to logging
 
 
 @task(interval=settings.check_interval)
